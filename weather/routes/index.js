@@ -17,6 +17,8 @@ router.post('/get_weather', async function (req,res) {
   try {
     let data = await fetch(url);
     let weather = await data.json();
+    console.log("UNITS: " + process.env.UNITS);
+    console.log("URL: " + url);
     console.log(weather);
     if(weather.cod == '404' && weather.main == undefined) {
       res.render('index', {weather: null, error: 'Error: Unknown city'});
