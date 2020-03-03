@@ -1,14 +1,23 @@
 const express = require('express');
 app = express();
 
-var response;
+const version = 1;
 
 app.get('/', function (req, res) {
 
-    response = 'This is version 3 of the app and I love Patricia' + '\n';
+    var response = 'This is version ' + version + ' of the app.</h2>' + '\n';
 
     //send the response to the client
     res.send(response);
+
+});
+
+app.get('/html', function (req, res) {
+
+  var response = '<h2>This is version <b style="color: red;">' + version + '</b> of the app.</h2>' + '\n';
+
+  //send the response to the client
+  res.send(response);
 
 });
 
