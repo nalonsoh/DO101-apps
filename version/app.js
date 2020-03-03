@@ -1,7 +1,7 @@
 const express = require('express');
 app = express();
 
-const version = 1;
+const version = 2;
 
 app.get('/', function (req, res) {
 
